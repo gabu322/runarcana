@@ -1,0 +1,191 @@
+$baseSize: 0.5rem;
+$middleColor: #EAEAEAEA;
+$middleSize: 70%;
+$textColor: #7A7A7A;
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Spectral', serif;
+    color: $textColor;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.title {
+    font-family: 'Spectral SC', serif;
+    font-size: 3rem;
+}
+
+.horizontalLine {
+    background-color: #888888;
+    width: 90%;
+    height: 2px;
+    margin: 0 auto;
+}
+
+.verticalLine {    
+    background-color: #888888;
+    height: 90%;
+    width: 2px;
+    margin: auto 0;
+}
+
+.header {
+    height: $baseSize * 5;
+    width: $middleSize;
+    margin: $baseSize * 2 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    font-family: 'Spectral';
+    font-size: $baseSize * 3;
+    font-weight: bold;
+    
+
+    .headerImg {
+        height: 80%;
+
+    }
+
+    .socials {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        
+        .headerLinks {
+            margin: $baseSize / 2;
+            height: $baseSize * 5;
+            width: $baseSize * 5;
+            border-radius: $baseSize/2;
+
+            a {
+                height: $baseSize * 5;
+                width: $baseSize * 5;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .headerImages {
+                    width: $baseSize * 4;
+                    border-radius: $baseSize/2;
+                }
+            }
+            
+        }
+        
+        #wikiLink {
+            background-color: #B69236;
+        }
+        #siteLink {
+            background-color: rgb(73, 0, 73);
+        }
+    }
+}
+.mainContent {
+    width: $middleSize;
+    height: 80vh;
+    margin: $baseSize auto;
+    background-color: #EAEAEA;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: $baseSize;
+
+    .introduction, .authentication {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 5vh;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+        
+    .authentication{
+        .login {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: top;
+            align-items: center;
+            height: 45%;
+            
+            #loginForm {
+                position: relative;
+                top: 0px;
+                width: 80%;
+                border-radius: $baseSize;
+                justify-content: center;
+                align-items: center;
+
+                .loginButton, 
+                .passwordButton,
+                .submitButtonDiv{
+                    position: relative;
+                    margin: $baseSize * 3;
+                    background-color: white;
+                    border-radius: $baseSize;
+                    border: 2px solid $textColor;
+                    height: 66px;
+                    transition: all 0.2s ease-in-out;
+                }
+                .loginButton:has(input:focus),
+                .passwordButton:has(input:focus) {
+                    border: 2px solid black;
+                }
+
+                .loginButton input, 
+                .passwordButton input{
+                    width: 100%;
+                    padding: 10px;
+                    transform: translateY(15px);
+                    font-size: $baseSize * 3;
+                    color: black;
+                    border: none;
+                    border-radius: $baseSize;
+                    font-family: serif;
+                    background-size: black;
+                }
+                .loginButton label, 
+                .passwordButton label{
+                    transform: translateX(8px);
+                    position: absolute;
+                    left: 0;
+                    pointer-events: none;
+                    transition: all 0.5s ease-in-out;
+                    font-size: 2.6rem;
+                }
+                .loginButton input:focus ~ label, 
+                .loginButton input:valid ~ label, 
+                .passwordButton input:focus ~ label,
+                .passwordButton input:valid ~ label{
+                    transform: translateY(-15px);
+                    transform: translateX(8px);
+                    font-size: 1rem;
+                }
+                
+                .submitButtonDiv{
+                    border-color: black;
+                    width: 90%;
+                    /*.submitButton{
+                        width: 100%;
+                        height: 100%;
+                        border-radius: $baseSize;
+                        background-color: black;
+                    }*/
+                }
+            }
+        }
+        .registrationForm {
+            height: 50%;
+        }
+    }
+}
+
+.footer {
+    position: absolute;
+    background-color: transparent;
+}

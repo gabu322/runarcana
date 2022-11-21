@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Spectral", serif;
+  color: #7A7A7A;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.title {
+  font-family: "Spectral SC", serif;
+  font-size: 3rem;
+}
+
+.horizontalLine {
+  background-color: #888888;
+  width: 90%;
+  height: 2px;
+  margin: 0 auto;
+}
+
+.verticalLine {
+  background-color: #888888;
+  height: 90%;
+  width: 2px;
+  margin: auto 0;
+}
+
+.header {
+  height: 2.5rem;
+  width: 70%;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Spectral";
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.header .headerImg {
+  height: 80%;
+}
+.header .socials {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.header .socials .headerLinks {
+  margin: 0.25rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 0.25rem;
+}
+.header .socials .headerLinks a {
+  height: 2.5rem;
+  width: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .socials .headerLinks a .headerImages {
+  width: 2rem;
+  border-radius: 0.25rem;
+}
+.header .socials #wikiLink {
+  background-color: #B69236;
+}
+.header .socials #siteLink {
+  background-color: rgb(73, 0, 73);
+}
+
+.mainContent {
+  width: 70%;
+  height: 80vh;
+  margin: 0.5rem auto;
+  background-color: #EAEAEA;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 0.5rem;
+}
+.mainContent .introduction, .mainContent .authentication {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 5vh;
+  align-items: center;
+  justify-content: space-between;
+}
+.mainContent .authentication .login {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  height: 45%;
+}
+.mainContent .authentication .login #loginForm {
+  position: relative;
+  top: 0px;
+  width: 80%;
+  border-radius: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+.mainContent .authentication .login #loginForm .loginButton,
+.mainContent .authentication .login #loginForm .passwordButton,
+.mainContent .authentication .login #loginForm .submitButtonDiv {
+  position: relative;
+  margin: 1.5rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  border: 2px solid #7A7A7A;
+  height: 66px;
+  transition: all 0.2s ease-in-out;
+}
+.mainContent .authentication .login #loginForm .loginButton:has(input:focus),
+.mainContent .authentication .login #loginForm .passwordButton:has(input:focus) {
+  border: 2px solid black;
+}
+.mainContent .authentication .login #loginForm .loginButton input,
+.mainContent .authentication .login #loginForm .passwordButton input {
+  width: 100%;
+  padding: 10px;
+  transform: translateY(15px);
+  font-size: 1.5rem;
+  color: black;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: serif;
+  background-size: black;
+}
+.mainContent .authentication .login #loginForm .loginButton label,
+.mainContent .authentication .login #loginForm .passwordButton label {
+  transform: translateX(8px);
+  position: absolute;
+  left: 0;
+  pointer-events: none;
+  transition: all 0.5s ease-in-out;
+  font-size: 2.6rem;
+}
+.mainContent .authentication .login #loginForm .loginButton input:focus ~ label,
+.mainContent .authentication .login #loginForm .loginButton input:valid ~ label,
+.mainContent .authentication .login #loginForm .passwordButton input:focus ~ label,
+.mainContent .authentication .login #loginForm .passwordButton input:valid ~ label {
+  transform: translateY(-15px);
+  transform: translateX(8px);
+  font-size: 1rem;
+}
+.mainContent .authentication .login #loginForm .submitButtonDiv {
+  border-color: black;
+  width: 90%;
+  /*.submitButton{
+      width: 100%;
+      height: 100%;
+      border-radius: $baseSize;
+      background-color: black;
+  }*/
+}
+.mainContent .authentication .registrationForm {
+  height: 50%;
+}
+
+.footer {
+  position: absolute;
+  background-color: transparent;
+}/*# sourceMappingURL=style.css.map */
