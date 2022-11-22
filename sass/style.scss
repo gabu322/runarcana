@@ -2,6 +2,7 @@ $baseSize: 0.5rem;
 $middleColor: #EAEAEAEA;
 $middleSize: 70%;
 $textColor: #7A7A7A;
+$buttonSizing: 10px;
 
 * {
     margin: 0;
@@ -89,7 +90,7 @@ $textColor: #7A7A7A;
     margin: $baseSize auto;
     background-color: #EAEAEA;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     border-radius: $baseSize;
 
@@ -105,19 +106,21 @@ $textColor: #7A7A7A;
 
         
     .authentication{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
         .login {
             width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: top;
             align-items: center;
-            height: 45%;
             
             #loginForm {
                 position: relative;
                 top: 0px;
                 width: 80%;
-                border-radius: $baseSize;
                 justify-content: center;
                 align-items: center;
 
@@ -125,20 +128,20 @@ $textColor: #7A7A7A;
                 .passwordButton,
                 .submitButtonDiv{
                     position: relative;
-                    margin: $baseSize * 3;
+                    margin: $buttonSizing * 1;
                     background-color: white;
-                    border-radius: $baseSize;
+                    border-radius: $buttonSizing;
                     border: 2px solid $textColor;
-                    height: 66px;
+                    height: $buttonSizing * 6;
                     transition: all 0.2s ease-in-out;
-                }
-                .loginButton:has(input:focus),
-                .passwordButton:has(input:focus) {
-                    border: 2px solid black;
+                    &:has(input:focus) {
+                        border: 2px solid black;
+                    }
                 }
 
                 .loginButton input, 
                 .passwordButton input{
+                    background-color: transparent;
                     width: 100%;
                     padding: 10px;
                     transform: translateY(15px);
@@ -147,7 +150,6 @@ $textColor: #7A7A7A;
                     border: none;
                     border-radius: $baseSize;
                     font-family: serif;
-                    background-size: black;
                 }
                 .loginButton label, 
                 .passwordButton label{
@@ -156,7 +158,7 @@ $textColor: #7A7A7A;
                     left: 0;
                     pointer-events: none;
                     transition: all 0.5s ease-in-out;
-                    font-size: 2.6rem;
+                    font-size: $buttonSizing * 4;
                 }
                 .loginButton input:focus ~ label, 
                 .loginButton input:valid ~ label, 
@@ -164,23 +166,28 @@ $textColor: #7A7A7A;
                 .passwordButton input:valid ~ label{
                     transform: translateY(-15px);
                     transform: translateX(8px);
-                    font-size: 1rem;
+                    font-size: $buttonSizing * 2;
                 }
                 
                 .submitButtonDiv{
-                    border-color: black;
-                    width: 90%;
-                    /*.submitButton{
+                    margin-top: $baseSize * 3;
+                    background-color: $textColor;
+                    .submitButton{
+                        color: black;
+                        border: none;
                         width: 100%;
                         height: 100%;
-                        border-radius: $baseSize;
-                        background-color: black;
-                    }*/
+                        background-color: transparent;
+                        font-size: $buttonSizing * 4;
+                        transition: all 1s ease-in-out;
+                        box-shadow: 0px 0px;
+                    }
+                    &:has(.submitButton:hover) {
+                        background-color: #AAA;
+                        box-shadow: 0px 3px 5px 3px;
+                    }
                 }
             }
-        }
-        .registrationForm {
-            height: 50%;
         }
     }
 }
